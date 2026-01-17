@@ -1,6 +1,7 @@
 package mozay.library_management_system_backend.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -27,6 +28,7 @@ public class Book {
     @Column(nullable = false, unique = true)
     private String isbn;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "published_date")
     private LocalDate publishedDate;
 
