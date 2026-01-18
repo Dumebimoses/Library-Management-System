@@ -39,51 +39,20 @@ Running the Application
 Steps
 
 
-1. Clone the repository
+1. Clone the repository: https://github.com/Dumebimoses/Library-Management-System.git
+2. Navigate to the backend project directory
+3. Run the application: mvn spring-boot:run
+4. The application starts on: http://localhost:8080
 
-
-Navigate to the backend project directory
-
-
-Run the application:
-
-
-mvn spring-boot:run
-
-
-
-The application starts on:
-
-
-http://localhost:8080
 
 
 Database Configuration
+-Database: H2 (in-memory)
+-Console URL:http://localhost:8080/h2-console
 
-
-Database: H2 (in-memory)
-
-
-Console URL:
-
-
-http://localhost:8080/h2-console
-
-
-
-JDBC URL:
-
-
-jdbc:h2:mem:testdb
-
-
-
+JDBC URL: jdbc:h2:mem:testdb
 Username: sa
-
-
 Password: (leave blank)
-
-
 
 API Base URL
 http://localhost:8080/api/books
@@ -198,44 +167,21 @@ Response (200 OK)
 
 Validation Rules
 The following fields are required when creating or updating a book:
-
-
-title (Not Blank)
-
-
-author (Not Blank)
-
-
-isbn (Not Blank)
-
-
-publishedDate (Not Null)
-
+1. title (Not Blank)
+2. author (Not Blank)
+3. isbn (Not Blank)
+4. publishedDate (Not Null)
 
 Validation failures return 400 Bad Request with descriptive error messages.
 
 Logging
-
-
-Application events such as book creation, update, and deletion are logged using SLF4J.
-
-
-Logs appear in the console during runtime.
-
-
+-Application events such as book creation, update, and deletion are logged using SLF4J.
+-Logs appear in the console during runtime.
 
 Notes
-
-
 This backend is designed to be consumed by any HTTP client such as:
-
-
-JavaFX frontend
-
-
-Postman
-
-
-Web or mobile applications
+1. JavaFX frontend
+2. Postman
+3. Web or mobile applications
 
 The frontend communicates only via REST APIs and does not directly access backend code or the database.
